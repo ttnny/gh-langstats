@@ -3,6 +3,6 @@ package gh_langstats
 import "testing"
 
 func TestGetLangStats(t *testing.T) {
-	username := ""
+	username := "ttnny"
 	GetLangStats(username)
 }

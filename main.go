@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/google/go-github/v29/github"
 	"golang.org/x/oauth2"
+	"io/ioutil"
 	"log"
 )
 
@@ -25,8 +26,14 @@ func GetLangStats(username string) {
 func getLangStats(username string) map[string]int {
 	ctx := context.Background()
 
+	// Get GitHub token from "token.txt"
+	token, err := ioutil.ReadFile("token.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// Uncomment these to create a GitHub authenticated client with your token
-	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: ""}, )
+	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: string(token)}, )
 	tc := oauth2.NewClient(ctx, ts)
 	client := github.NewClient(tc)
 
