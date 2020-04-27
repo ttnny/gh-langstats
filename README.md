@@ -4,7 +4,7 @@
 
 ### gh-langstats
 
-The gh-langstats is a Go module to generate...
+The `gh-langstats` is a Go module to generate...
 
 ![gh-langstats-module](/img/gh-langstats-module.svg)
 
